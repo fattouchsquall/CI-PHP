@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- https://phpunit.de/manual/current/en/appendixes.configuration.html -->
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/6.5/phpunit.xsd"
+         backupGlobals="false"
+         colors="true"
+         bootstrap="config/bootstrap.php"
+>
+    <php>
+        <ini name="error_reporting" value="-1" />
+        <env name="APP_ENV" value="test" />
+        <env name="SHELL_VERBOSITY" value="-1" />
+    </php>
+
+    <testsuites>
+        <testsuite name="Applicatif Test Suite">
+            <directory suffix="Test.php">tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist>
+            <directory>src</directory>
+        </whitelist>
+    </filter>
+    
+    <logging>
+        <log type="coverage-html" target="var/ci_log/coverage"
+             lowUpperBound="50" highLowerBound="85"/>
+        <log type="coverage-xml" target="var/ci_log/coverage-xml"
+             lowUpperBound="50" highLowerBound="85"/>
+        <log type="coverage-clover" target="var/ci_log/clover.xml"/>
+        <log type="coverage-crap4j" target="var/ci_log/crap4j.xml"/>
+        <log type="coverage-text" target="php://stdout" showUncoveredFiles="false"/>
+        <log type="junit" target="var/ci_log/junit.xml"/>
+    </logging>
+</phpunit>
