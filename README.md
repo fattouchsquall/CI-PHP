@@ -5,19 +5,18 @@ This is a helper project that contains a list CI and docker tasks based on a Mak
 
 The main prupose of this is to be used for automatisation of CI.
 
-To display help commands:
+To display help tasks:
 
 ```bash
 make
 ```
 
-Docker
-------
+## Docker tasks
 
 1. Install [Docker](https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/)
 2. Install [Docker Compose](https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/)
 
-List of available commands:
+List of important docker's tasks:
 
 ```bash
 make docker-start  # to start a docker compose stack
@@ -27,8 +26,7 @@ make docker-start  # to start a docker compose stack
 make docker-stop  # to stop a docker compose stack
 ```
 
-Execute various CI Commands
----------------------------
+## Execute various CI tasks
 
 Commands **CAN** be executed within the Docker container.
 To log into the container, just run `make docker-bash`
@@ -161,8 +159,7 @@ The second one, is only for running PHPUNIT tests without code coverage:
 make test-no-coverage
 ```
 
-Combine CI task
----------------
+## Combine CI tasks
 
 There's another task that combine all CI taks that can be used in CI servers:
 
@@ -178,8 +175,7 @@ This executes the following steps:
 4. Execute unit tests with code coverage
 5. Generate doc from the project
 
-Overload variables
-------------------
+## Overload task variables
 
 There's a various predefined variables that can be overload when executing a task as the following:
 
@@ -189,16 +185,15 @@ make test --LOGIR = 'var/logs'
 
 ### CI
 
-* SRCDIR : to define a new source direcotry
-* LOGDIR : to define a new output log directory
-* BUILDDIR : to define a new configuration directory
+* **SRCDIR** : to define a new source direcotry
+* **LOGDIR** : to define a new output log directory
+* **BUILDDIR** : to define a new configuration directory
 
 ### Docker
 
-* APPLICATION_NAME : to define the name of application in docker-compose.yml
+* **APPLICATION_NAME** : to define the name of application in docker-compose.yml
 
-License
--------
+## License
 
 This project is under the Apache License 2.0. See the complete license:
 
@@ -206,17 +201,16 @@ This project is under the Apache License 2.0. See the complete license:
     LICENSE
 ```
 
-Contributors
-------------
+## Contributors
 
 See [CONTRIBUTING][9] file.
 
-[1] https://github.com/phpstan/phpstan#installation
-[2] https://phpmd.org/download/index.html
-[3] https://github.com/squizlabs/PHP_CodeSniffer#composer
-[4] https://github.com/theseer/phpdox#composer-installation
-[5] https://github.com/sebastianbergmann/phpcpd#composer
-[6] https://github.com/sebastianbergmann/phploc#composer
-[7] https://pdepend.org/download/index.html
-[8] https://phpunit.de/getting-started/phpunit-7.html
+[1]: https://github.com/phpstan/phpstan#installation
+[2]: https://phpmd.org/download/index.html
+[3]: https://github.com/squizlabs/PHP_CodeSniffer#composer
+[4]: https://github.com/theseer/phpdox#composer-installation
+[5]: https://github.com/sebastianbergmann/phpcpd#composer
+[6]: https://github.com/sebastianbergmann/phploc#composer
+[7]: https://pdepend.org/download/index.html
+[8]: https://phpunit.de/getting-started/phpunit-7.html
 
